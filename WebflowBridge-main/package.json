@@ -1,0 +1,23 @@
+{
+  "name": "suav-bridge",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2"
+  },
+  "description": "This plugin and its source code are copyrighted © SUAV Console Labs.",
+  "main": "bridge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
