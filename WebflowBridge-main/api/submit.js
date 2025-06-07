@@ -8,8 +8,12 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
 
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
 
   const { firstName, email, formId, token } = req.body;
 
@@ -22,9 +26,8 @@ export default async function handler(req, res) {
   const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
   const GHL_FORM_ID_FIELD = process.env.GHL_FORM_ID_FIELD;
 
-  // Remove reference to GHL_MESSAGE_FIELD_ID since message field is excluded
-  if (!GHL_API_KEY || !GHL_LOCATION_ID || !GHL_FORM_ID_FIELD) {
-    return res.status(500).json({ error: 'Missing required GHL env vars' });
+  if (!PRIVATE_TOKEN || !GHL_API_KEY || !GHL_LOCATION_ID || !GHL_FORM_ID_FIELD) {
+    return res.status(500).json({ error: 'Missing required environment variables' });
   }
 
   if (token !== PRIVATE_TOKEN) {
@@ -70,6 +73,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'GHL connection failed' });
   }
 }
+
 
 
 
