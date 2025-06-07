@@ -3,7 +3,7 @@ const fetch = (...args) =>
 
 export default async function handler(req, res) {
   // CORS headers for your Webflow domain ONLY
-  res.setHeader('Access-Control-Allow-Origin', 'https://ghostform-b9eb5f.webflow.io/');
+  res.setHeader('Access-Control-Allow-Origin', 'https://ghostform-b9eb5f.webflow.io');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
