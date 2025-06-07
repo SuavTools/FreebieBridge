@@ -1,5 +1,5 @@
 (function () {
-  const ENDPOINT = "https://webflow-bridge.vercel.app/api/submit";
+  const ENDPOINT = "https://freebie-bridge.vercel.app/api/submit";
 
   function extractFormData(form) {
     const formData = new FormData(form);
